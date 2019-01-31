@@ -7,6 +7,8 @@ angular.module('app', [
   //Default Ionic Reference
   'ionic',
   'ngCordova',
+  'ionic.service.core',
+  'ionic.service.push',
 
   //App Settings
   'config',
@@ -44,3 +46,11 @@ angular.module('app', [
     $state.go('app.home')
   })
 })
+
+.config(['$ionicAppProvider', function($ionicAppProvider) {
+  $ionicAppProvider.identify({
+    app_id: 'de3a709b',
+    api_key: 'INSERT_PUBLIC_KEY',
+    dev_push: true
+  });
+}])
