@@ -1,0 +1,136 @@
+$background: #707070;
+
+$popover-title-color: #999;
+$popover-text-color: #707070;
+
+%popover-radius {
+  border-radius: 10px;
+  color: $popover-text-color;
+}
+
+@mixin invert($property) {
+  -webkit-filter: invert($property);
+}
+
+ion-side-menu-content.menu-content.pane {
+  background: $background;
+}
+
+ion-view.pane {
+  background: $background;
+}
+
+.c-nav-bar {
+  background: #2D2D2D;
+  border-bottom: none;
+}
+
+.c-view-content {
+  background: #2D2D2D !important;
+}
+
+.c-popover-view {
+  @extend %popover-radius;
+  padding: 30px;
+  height: 142px;
+
+  .c-header-bar {
+    @extend %popover-radius;
+    border-bottom: none;
+  
+    .title {
+      font-size: 5px;
+    }
+    p {
+      padding-top: 10px;
+      padding-left: 15px;
+      font-size: 12px;
+      color: $popover-title-color;
+    }
+  }
+
+  .c-content {
+    padding-left: 20px;
+
+    h1 {
+      font-size: 18px;
+      color: $popover-text-color;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+.c-popover-full {
+  height: 330px;
+  top: 100px;
+  opacity: initial;
+}
+
+.c-notification-button {
+  border-radius: 20px;
+  background: #FFB347;
+  color: #fff;
+  height: 35px;
+  min-height: 35px;
+  line-height: normal;
+  margin: auto;
+  width: 90%;
+  &:hover {
+    color: #fff;
+  }
+}
+
+button.ion-android-notifications {
+  color: #ffffff;
+  top: 4px;
+  right: -30px;
+}
+
+a.item-avatar img {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c-avatar {
+  border: 1px solid #fff;
+}
+
+span.badge.badge-assertive.c-badge {
+  top: -12px;
+  left: -15px;
+  width: 20px;
+  height: 20px;
+  padding: 0px 3px;
+  font-size: 11px;
+  background: #FFB347;
+  border: 3px solid #707070;
+}
+
+button.button.back-button.buttons.button-clear.header-item {
+  margin: 15px 8px;
+}
+
+i.icon.ion-chevron-left {
+  color: #fff;
+}
+
+.animation {
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}

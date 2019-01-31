@@ -1,0 +1,44 @@
+{
+  "name": "challenge",
+  "version": "0.0.1",
+  "description": "Youper Challenge",
+  "devDependencies": {
+    "@ionic/v1-toolkit": "^1.0.0",
+    "bower": "^1.8.8",
+    "gulp": "^3.5.6",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "shelljs": "^0.8.3"
+  },
+  "dependencies": {
+    "@ionic/lab": "^1.0.19",
+    "cordova-android": "7.1.4",
+    "cordova-plugin-camera": "4.0.3",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^2.3.2",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-camera": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+<ion-view cache-view="false" hide-nav-bar="true">
+    <ion-content>
+        <div class="row">
+            <div class="col col-50">
+                <a class="item-avatar" ng-click="getPicture()">
+                    <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" ng-class="{ 'c-avatar' : imgURI !== 'img/avatar.png' }">
+                </a>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+                <button class="button button-icon icon ion-android-notifications" ng-click="openPopover($event)">
+                    <span ng-show="" class="badge badge-assertive c-badge">1</span>
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
