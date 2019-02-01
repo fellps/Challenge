@@ -4,7 +4,7 @@ angular.module('config', [])
     $ionicConfigProvider.views.swipeBackEnabled(false)
   })
 
-  .service('apiConfig', function(){
+  .service('apiConfig', function() {
     var apiConfig = this
     var environment = 'dev'
 
