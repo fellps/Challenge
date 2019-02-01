@@ -9,9 +9,9 @@ angular.module('config.routes', [])
     // Abstract state
     .state('app', {
       url: '/app',
+      controller: 'TemplatesCtrl',
       templateUrl: 'application/templates/main.html',
       abstract: true,
-      controller: 'TemplatesCtrl',
       cache: false
     })
 
@@ -29,6 +29,7 @@ angular.module('config.routes', [])
     // Notification page
     .state('app.notification', {
       url: '/notification',
+      controller: 'HomeCtrl',
       views: {
         'content': {
           templateUrl: 'application/notification/index.html'

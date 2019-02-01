@@ -1,21 +1,16 @@
 <ion-view cache-view="true" class="c-view-content">
     <ion-popover-view class="c-popover-view c-popover-full">
         <ion-header-bar class="c-header-bar">
-            <p>5 minutes ago</p>
+            <p>{{ diffMins > 1 ? diffMins + ' minutes ago' : 'Just now'}}</p>
         </ion-header-bar> 
         <ion-content class="c-content">
-            <h1>New Feature!</h1>
-            <p>
-                Now you can customize your avatar uploading your selfie.
-                <br/>
-                <br/>
-                Just click on the avatar, take or select a picture and save.
-                <br/>
-                <img src="http://server/newfeature.png"/>                
-            </p>
-            <button class="button c-notification-button">
+            <h1>{{title}}</h1>
+            <p ng-bind-html="body" class="c-notification-body"></p>
+        </ion-content>
+        <ion-footer-bar class="c-footer-bar">
+            <button class="button c-notification-button" ng-click="goHome()">
                 Got it
             </button>
-        </ion-content>
+        </ion-footer-bar>
     </ion-popover-view>
 </ion-view>

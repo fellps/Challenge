@@ -9874,7 +9874,7 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.c-popover-view, .c-popover-view .c-header-bar {
+.c-popover-view, .c-popover-view .c-header-bar, .c-popover-view .c-footer-bar {
   border-radius: 10px;
   color: #707070; }
 
@@ -9910,9 +9910,15 @@ ion-view.pane {
       color: #707070; }
     .c-popover-view .c-content p {
       font-size: 13px; }
+  .c-popover-view .c-footer-bar {
+    height: 65px; }
 
 .c-popover-full {
-  height: 330px;
+  height: 60%;
+  width: 70%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   top: 100px;
   opacity: initial; }
 
@@ -9928,6 +9934,15 @@ ion-view.pane {
   .c-notification-button:hover {
     color: #fff; }
 
+p.c-notification-body.ng-binding img {
+  width: 90%; }
+
+.c-avatar {
+  border: 1px solid #fff; }
+
+.c-disabled {
+  color: #999999 !important; }
+
 button.ion-android-notifications {
   color: #ffffff;
   top: 4px;
@@ -9938,9 +9953,6 @@ a.item-avatar img {
   width: 40px;
   height: 40px;
   border-radius: 50%; }
-
-.c-avatar {
-  border: 1px solid #fff; }
 
 span.badge.badge-assertive.c-badge {
   top: -12px;

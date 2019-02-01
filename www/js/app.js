@@ -16,6 +16,9 @@ angular.module('app', [
   //Routes configurator
   'config.routes',
 
+  //Factories
+  'factory.localStorage',
+
   //Services
   'services.api',
 
@@ -46,11 +49,3 @@ angular.module('app', [
     $state.go('app.home')
   })
 })
-
-.config(['$ionicAppProvider', function($ionicAppProvider) {
-  $ionicAppProvider.identify({
-    app_id: 'de3a709b',
-    api_key: 'INSERT_PUBLIC_KEY',
-    dev_push: true
-  });
-}])

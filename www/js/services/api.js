@@ -13,7 +13,7 @@ angular.module('services.api', ['ionic'])
         animation: 'fade-in',
         showBackdrop: false,
         maxWidth: 200,
-        showDelay: 500
+        showDelay: 0
       })
 
       // Shortcut method to perform GET request
@@ -23,12 +23,11 @@ angular.module('services.api', ['ionic'])
           // Called asynchronously if on success
           function successCallback(receivedData) {
             $ionicLoading.hide()
-            
             try{
-              callback(decryptedData)
+              callback(receivedData.data)
             }
             catch(err){
-              callback({valido: false, mensagem : 'Erro no retorno da resposta para aplicação. Tente novamente !'})
+              callback({status: false, message : 'Error in return of response to application. Try again!'})
             }
           },
 
@@ -36,7 +35,7 @@ angular.module('services.api', ['ionic'])
           // or server returns response with an error status
           function errorCallback(response) {
             $ionicLoading.hide()
-            callback({valido: false, mensagem : 'Não foi possível finalizar. Tente novamente !'})
+            callback({status: false, message : 'Could not finish. Try again!'})
           }
         )
     }

@@ -12,9 +12,9 @@ angular.module('config', [])
     // STG, PRD etc.
     var _environments = {
       dev: {
-        host: 'dev.nugo.com.br',
+        host: 'localhost:9502',
         config: {
-          apiEndpoint: 'https://api-dev.nugo.com.br/'
+          apiEndpoint: 'http://localhost:9502/'
         }
       }
     }
