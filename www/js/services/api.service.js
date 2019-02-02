@@ -1,12 +1,12 @@
 angular.module('services.api', ['ionic'])
 
-  .service('api', function($http, apiConfig, $ionicLoading) {
+  .service('$api', function($http, $apiConfig, $ionicLoading) {
     var apiService = this
 
     apiService.get = function(urlCall, callback) {
 
       // Get base url
-      apiService.url = apiConfig.urlService()
+      apiService.url = $apiConfig.urlService()
 
       $ionicLoading.show({
         content: 'Loading ...',

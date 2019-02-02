@@ -7,9 +7,7 @@ angular.module('app', [
   //Default Ionic Reference
   'ionic',
   'ngCordova',
-  'ngImgur',
-  'ionic.service.core',
-  'ionic.service.push',
+  'firebase',
 
   //App Settings
   'config',
@@ -19,17 +17,22 @@ angular.module('app', [
 
   //Factories
   'factory.localStorage',
-  'factory.imgur',
+  'factory.persistObject',
 
   //Services
   'services.api',
+  'services.firebase',
+
+  //Components
+  'components.notification',
+  'components.avatar',
 
   //Controllers
-  'templates',
-  'home'
+  'controllers.template',
+  'controllers.notification'
 ])
 
-.run(function($ionicPlatform, $imgur, $state, $localStorage) {
+.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs).
@@ -45,18 +48,6 @@ angular.module('app', [
       // Set the statusbar to use the default style, tweak this to
       // remove the status bar on iOS or change it to use white instead of dark colors.
       StatusBar.styleDefault()
-    }
-
-    if(!window.cordova) {
-      $localStorage.imgur = {
-          oauth: {
-              access_token: "IMGUR_ACCESS_TOKEN_FOR_WEB_ONLY",
-              account_username: "fellipevasc"
-          }
-      };
-      imgurInstance = new $imgur($localStorage.imgur.oauth.access_token);
-    } else if($localStorage.imgur !== undefined && (new Date).getTime() < $localStorage.imgur.oauth.expires_at) {
-        imgurInstance = new $imgur($localStorage.imgur.oauth.access_token);
     }
 
     // Go to home page

@@ -1,11 +1,11 @@
 <ion-view cache-view="true" class="c-view-content">
     <ion-popover-view class="c-popover-view c-popover-full">
         <ion-header-bar class="c-header-bar">
-            <p>{{ diffMins > 1 ? diffMins + ' minutes ago' : 'Just now'}}</p>
+            <p>{{ data.diffMins > 1 ? data.diffMins + ' minutes ago' : 'Just now'}}</p>
         </ion-header-bar> 
         <ion-content class="c-content">
-            <h1>{{title}}</h1>
-            <p ng-bind-html="body" class="c-notification-body"></p>
+            <h1>{{ data.title }}</h1>
+            <p ng-bind-html="data.body" class="c-notification-body"></p>
         </ion-content>
         <ion-footer-bar class="c-footer-bar">
             <button class="button c-notification-button" ng-click="goHome()">

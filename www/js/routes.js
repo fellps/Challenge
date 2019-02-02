@@ -9,8 +9,8 @@ angular.module('config.routes', [])
     // Abstract state
     .state('app', {
       url: '/app',
-      controller: 'TemplatesCtrl',
-      templateUrl: 'application/templates/main.html',
+      controller: 'TemplateCtrl',
+      templateUrl: 'app/templates/main.html',
       abstract: true,
       cache: false
     })
@@ -18,21 +18,20 @@ angular.module('config.routes', [])
     // Home page
     .state('app.home', {
       url: '/',
-      controller: 'HomeCtrl',
       views: {
         'content': {
-          templateUrl: 'application/templates/home.html'
+          templateUrl: 'app/templates/home.html'
         }
       }
     })
 
     // Notification page
     .state('app.notification', {
-      url: '/notification',
-      controller: 'HomeCtrl',
+      url: '/notificationDetails',
       views: {
         'content': {
-          templateUrl: 'application/notification/index.html'
+          templateUrl: 'app/notification/notification.html',
+          controller: 'NotificationCtrl'
         }
       }
     })

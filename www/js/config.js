@@ -4,7 +4,7 @@ angular.module('config', [])
     $ionicConfigProvider.views.swipeBackEnabled(false)
   })
 
-  .service('apiConfig', function() {
+  .service('$apiConfig', function() {
     var apiConfig = this
     var environment = 'dev'
 
@@ -12,9 +12,9 @@ angular.module('config', [])
     // STG, PRD etc.
     var _environments = {
       dev: {
-        host: 'localhost:9502',
         config: {
-          apiEndpoint: 'http://localhost:9502/'
+          apiEndpoint: 'http://192.168.56.1:9502/',
+          firebaseEndpoint: 'https://youper-challenge-upload.firebaseapp.com/'
         }
       }
     }
@@ -22,5 +22,10 @@ angular.module('config', [])
     // Get url service from current environment
     apiConfig.urlService = function () {
       return _environments[environment].config.apiEndpoint
+    }
+
+    // Get url service from current environment
+    apiConfig.urlFirebase = function () {
+      return _environments[environment].config.firebaseEndpoint
     }
   })

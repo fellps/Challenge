@@ -12,13 +12,9 @@
 
     <!-- Ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <script src="lib/angular-websocket/dist/angular-websocket.min.js"></script>
-    <script src="lib/ionic-imgur-app/ng-imgur.min.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
-    <script src="lib/ionic-imgur-app/ngStorage.min.js"></script>
-    <script src="lib/ionic-service-core/ionic-core.js"></script>
-    <script src="lib/ionic-service-push/ionic-push.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.min.js"></script>
     
     <!-- Cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -29,15 +25,20 @@
     <script src="js/routes.js"></script>
 
     <!-- Factories -->
-    <script src="js/factories/localstorage.factory.js"></script>
-    <script src="js/factories/imgur.factory.js"></script>
+    <script src="js/factories/local-storage.factory.js"></script>
+    <script src="js/factories/persist-object.factory.js"></script>
 
     <!-- Services -->
-    <script src="js/services/api.js"></script>
+    <script src="js/services/api.service.js"></script>
+    <script src="js/services/firebase.service.js"></script>
+
+    <!-- Components -->
+    <script src="app/components/notification/notification.component.js"></script>
+    <script src="app/components/avatar/avatar.component.js"></script>
 
     <!-- Controllers-->
-    <script src="application/templates/controllers/templates.controller.js"></script>
-    <script src="application/templates/controllers/home.controller.js"></script>
+    <script src="app/templates/templates.controller.js"></script>
+    <script src="app/notification/notification.controller.js"></script>
   </head>
   <body ng-app="app">
     <ion-nav-view></ion-nav-view>
