@@ -1,6 +1,6 @@
 angular.module('controllers.notification', [])
 
-  .controller('NotificationCtrl', function($scope, $persistObject) {
+  .controller('NotificationCtrl', function($scope, $state, $persistObject) {
 
     // Loads data to display on the screen
     $scope.data = $persistObject.get('notification')

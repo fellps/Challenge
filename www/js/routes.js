@@ -25,7 +25,7 @@ angular.module('config.routes', [])
       }
     })
 
-    // Notification page
+    // Notification details page
     .state('app.notification', {
       url: '/notificationDetails',
       views: {

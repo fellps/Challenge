@@ -1,3 +1,7 @@
+/**
+ * This service is used to get settings from the current environment
+ */
+
 angular.module('config', [])
 
   .config(function($ionicConfigProvider) {
@@ -6,26 +10,33 @@ angular.module('config', [])
 
   .service('$apiConfig', function() {
     var apiConfig = this
-    var environment = 'dev'
+    var currentEnvironment = 'dev'
 
-    // We can add different environments
-    // STG, PRD etc.
+    // We can add different environments, STG, PRD..
     var _environments = {
       dev: {
         config: {
-          apiEndpoint: 'http://192.168.56.1:9502/',
-          firebaseEndpoint: 'https://youper-challenge-upload.firebaseapp.com/'
+          // API settings
+          apiEndpoint       : 'http://192.168.0.15:9502/',
+          
+          // Firebase settings
+          apiKey            : 'AIzaSyCdHv1W_zidG9Uexze3vpucoOJ0iPmBhq0',
+          authDomain        : 'youper-challenge-upload.firebaseapp.com',
+          projectId         : 'youper-challenge-upload',
+          databaseURL       : 'https://youper-challenge-upload.firebaseio.com',
+          storageBucket     : 'youper-challenge-upload.appspot.com',
+          messagingSenderId : 'Y696596177056'
         }
       }
     }
 
     // Get url service from current environment
-    apiConfig.urlService = function () {
-      return _environments[environment].config.apiEndpoint
+    apiConfig.getUrlService = function () {
+      return _environments[currentEnvironment].config.apiEndpoint
     }
 
     // Get url service from current environment
-    apiConfig.urlFirebase = function () {
-      return _environments[environment].config.firebaseEndpoint
+    apiConfig.getConfig = function () {
+      return _environments[currentEnvironment].config
     }
   })

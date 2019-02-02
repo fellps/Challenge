@@ -1,18 +1,24 @@
+/**
+ * This service is used to interaction with firebase
+ */
+
 angular.module('services.firebase', ['ionic'])
 
-  .service('$firebase', function(Firebase, $ionicLoading) {
+  .service('$firebase', function(Firebase, $ionicLoading, $apiConfig) {
     var apiService = this
+    var config = $apiConfig.getConfig()
 
+    // Upload image to Firebase
     apiService.upload = function(imageData) {
       $ionicLoading.show({template: "Uploading..."})
 
       var firebaseConfig = {
-        apiKey            : 'AIzaSyCdHv1W_zidG9Uexze3vpucoOJ0iPmBhq0',
-        authDomain        : 'youper-challenge-upload.firebaseapp.com',
-        projectId         : 'youper-challenge-upload',
-        databaseURL       : 'https://youper-challenge-upload.firebaseio.com',
-        storageBucket     : 'youper-challenge-upload.appspot.com',
-        messagingSenderId : 'Y696596177056'
+        apiKey: config.apiKey,
+        authDomain: config.authDomain,
+        projectId: config.projectId,
+        databaseURL: config.databaseURL,
+        storageBucket: config.storageBucket,
+        messagingSenderId: config.messagingSenderId
       }
       Firebase.initializeApp(firebaseConfig)
 

@@ -1,3 +1,8 @@
+/**
+ * Component avatar
+ * Description: 
+ */
+
 angular.module('components.avatar', [])
 
   .component('avatar', {
@@ -9,10 +14,12 @@ angular.module('components.avatar', [])
 
   .controller('AvatarCtrl', function($scope, $localStorage, $cordovaCamera, $firebase) {
 
+    $scope.imgURI = $localStorage.get('avatar')
+
     // Open photo library
     $scope.getPicture = function () {
       var options = {
-        quality: 75,
+        quality: 100,
         destinationType: Camera.DestinationType.DATA_URL,
         sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
         allowEdit: true,
@@ -29,8 +36,8 @@ angular.module('components.avatar', [])
     // Update avatar and upload picture to Firebase
     function updateAndUploadPicture(options) {
       $cordovaCamera.getPicture(options).then(function (imageData) {
-        $scope.imgURI = "data:image/jpeg;base64," + imageData
-        $localStorage.set("avatar", $scope.imgURI)
+        $scope.imgURI = 'data:image/jpeg;base64,' + imageData
+        $localStorage.set('avatar', $scope.imgURI)
         $firebase.upload(imageData)
       }, function (err) {
         console.log('error: ' + err);

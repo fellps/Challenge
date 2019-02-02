@@ -1,3 +1,7 @@
+/**
+ * This factory is used to transmit data between screens
+ */
+
 angular.module('factory.persistObject', [])
   .factory('$persistObject', function () {
 

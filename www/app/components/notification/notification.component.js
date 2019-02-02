@@ -10,7 +10,7 @@ angular.module('components.notification', [])
   .controller('NotificationComponentCtrl', function($scope, $ionicPopover, $state, $localStorage, $persistObject, $api) {
     
     // Search for notifications
-    $api.get("notification", function(result) {
+    $api.get('notification', function(result) {
       var code = $localStorage.getObject(result.data.code)
 
       if (code === undefined) {

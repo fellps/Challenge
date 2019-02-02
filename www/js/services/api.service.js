@@ -1,3 +1,7 @@
+/**
+ * This service is used to send and receive data from api
+ */
+
 angular.module('services.api', ['ionic'])
 
   .service('$api', function($http, $apiConfig, $ionicLoading) {
@@ -6,7 +10,7 @@ angular.module('services.api', ['ionic'])
     apiService.get = function(urlCall, callback) {
 
       // Get base url
-      apiService.url = $apiConfig.urlService()
+      apiService.url = $apiConfig.getUrlService()
 
       $ionicLoading.show({
         content: 'Loading ...',

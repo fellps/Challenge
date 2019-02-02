@@ -1,3 +1,7 @@
+/**
+ * This factory is used to persist data in the local storage
+ */
+
 angular.module('factory.localStorage', ['ionic'])
   .factory('$localStorage', ['$window', function($window) {
     return {
