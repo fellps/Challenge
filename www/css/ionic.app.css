@@ -9904,12 +9904,12 @@ ion-view.pane {
       font-size: 12px;
       color: #999; }
   .c-popover-view .c-content {
-    padding-left: 20px; }
+    padding: 10px 0 0 20px; }
     .c-popover-view .c-content h1 {
       font-size: 18px;
       color: #707070; }
     .c-popover-view .c-content p {
-      font-size: 13px; }
+      font-size: 14px; }
   .c-popover-view .c-footer-bar {
     height: 65px; }
 
