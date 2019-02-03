@@ -2,7 +2,8 @@
 Youper Challenge developed in Ionic 1
 
 ## QUICK START GUIDE
-First, change the 'www/config.js' file to your local settings
+1. Clone the repository https://github.com/fellps/Challenge-API and follow your installation steps
+2. Change the 'www/config.js' file to your local settings
 
 Then run:
 
