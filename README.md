@@ -12,3 +12,9 @@ $ npm install
 $ bower install
 $ ionic serve --lab
 ```
+
+Unit Tests
+
+```
+$ gulp test
+```
